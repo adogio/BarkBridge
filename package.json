@@ -1,0 +1,25 @@
+{
+  "name": "bkbridge",
+  "version": "0.0.0",
+  "description": ":bridge_at_night: Connect React components to styling interfaces with React-Router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adogio/BarkBridge.git"
+  },
+  "keywords": [
+    "Bridge",
+    "React",
+    "React-Router",
+    "DogUI"
+  ],
+  "author": "WMXPY",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/adogio/BarkBridge/issues"
+  },
+  "homepage": "https://github.com/adogio/BarkBridge#readme"
+}
