@@ -10,8 +10,7 @@ class DogUIISUCSSA extends Component {
         return (
             <div>
                 <BrowserRouter>
-                    <Route
-                        path="/"
+                    <Route path="/"
                         component={
                             (routes) =>
                                 <Structure
