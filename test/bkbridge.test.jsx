@@ -11,20 +11,18 @@ describe('Render Corner in background of page', () => {
     let renderedBkBridge;
 
     beforeEach(() => {
-        renderedBkBridge = shallow(<Bkbridge>Test Children</Bkbridge>);
+        const tabs = [
+            { route: "", component: () => <div>Test Children</div> }
+        ];
+        renderedBkBridge = shallow(<Bkbridge tabs={tabs}>Test Children</Bkbridge>);
     });
 
-    it('card shall be rendered as div', () => {
+    it('index shall be rendered as div', () => {
         expect(renderedBkBridge.type()).to.be.equal('div');
     })
 
-    it('card shall have corrent children', () => {
+    it('index shall have corrent children', () => {
         expect(renderedBkBridge.prop('children')).to.be.equal('Test Children');
-    })
-
-    it('card shall have correct style', () => {
-        expect(renderedBkBridge.prop('style').height).to.be.equal('25vh');
-        expect(renderedBkBridge.prop('style').position).to.be.equal('absolute');
     })
 
 }) 
