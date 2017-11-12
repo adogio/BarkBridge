@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 class BkBridge extends Component {
 
@@ -30,17 +31,28 @@ class BkBridge extends Component {
                     (<Redirect to={value.redirect} />)
                 }
             />
+        } else if (value.component) {
+            const Component = value.component;
+            return <Route
+                path={"/" + value.route}
+                exact={value.route.length <= 1}
+                render={() => {
+                    return <Component pre={value.route} />
+                }}
+                key={index}
+            />
+        } else {
+            return null;
         }
-        const Component = value.component;
-        return <Route
-            path={"/" + value.route}
-            exact={value.route.length <= 1}
-            render={() => {
-                return <Component pre={value.route} />
-            }}
-            key={index}
-        />
     }
+}
+
+BkBridge.propTypes = {
+    tabs: propTypes.arrayOf(propTypes.shape({
+        route: propTypes.string.isRequired,
+        redirect: propTypes.object,
+        component: propTypes.object
+    })).isRequired
 }
 
 export default BkBridge;
